@@ -17,6 +17,18 @@ opt.updatetime = 300
 opt.ignorecase = true
 opt.smartcase = true
 
+opt.list = true
+opt.listchars = {
+    tab = '» ',
+    trail = '·',
+    nbsp = '␣',
+    extends = '»',
+    precedes = '«',
+}
+opt.termguicolors = true
+
+vim.cmd("syntax on")
+
 vim.g.mapleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
