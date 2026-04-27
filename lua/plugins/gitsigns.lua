@@ -6,7 +6,6 @@ return {
       numhl      = true,  -- 行番号に色をつける
       linehl     = false, -- 行全体に色をつける (うるさければfalseに)
       word_diff  = true,  -- 行内のどの単語が変わったかまで強調する
-      show_deleted = true,
       signs = {
         add          = { text = '+' },
         change       = { text = '~' },
@@ -23,6 +22,9 @@ return {
           opts.buffer = bufnr
           vim.keymap.set(mode, l, r, opts)
         end
+        vim.schedule(function()
+          gs.toggle_deleted(true)
+        end)
 
         -- 次の変更点 / 前の変更点へ移動
         map('n', ']c', function()
@@ -38,6 +40,7 @@ return {
         end, {expr=true})
 
         map('n', '<leader>hr', gs.reset_hunk)
+        map('v', '<leader>hr', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
       end
     })
     vim.api.nvim_set_hl(0, 'GitSignsDeleteVirtLn', { fg = '#fb4934', bg = '#3c3836' })
