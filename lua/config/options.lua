@@ -26,6 +26,7 @@ opt.listchars = {
     precedes = '«',
 }
 opt.termguicolors = true
+opt.splitright = true
 
 vim.cmd("syntax on")
 
