@@ -7,7 +7,7 @@ return {
             eggLikeNewline = true,
             keepState = false,
         })
-        vim.keymap.set({ "i", "c" }, "<C-j>", "<Plug>(skkeleton-enable)", { silent = true })
+        vim.keymap.set({ "i", "c", "t" }, "<C-j>", "<Plug>(skkeleton-enable)", { silent = true })
     end,
 }
 
