@@ -19,14 +19,13 @@ opt.smartcase = true
 
 opt.list = true
 opt.listchars = {
-    tab = '» ',
+    tab = '>-',
     trail = '·',
     nbsp = '␣',
-    extends = '»',
-    precedes = '«',
 }
 opt.termguicolors = true
 opt.splitright = true
+opt.autoread = true
 
 vim.cmd("syntax on")
 
